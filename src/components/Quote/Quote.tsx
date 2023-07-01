@@ -27,7 +27,7 @@ const Quote:React.FC<Props> = ({author, category,text, id, clean}) => {
     });
 
     let blockQuote = (
-        <div className="my-4 quote-block d-flex flex-column card">
+        <div className="mb-4 quote-block d-flex flex-column card">
             <div className='card-header'>
                 <span className='text-secondary me-3'><b>{author}</b></span>
                 <span>{category}</span>

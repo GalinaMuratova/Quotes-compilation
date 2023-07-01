@@ -1,5 +1,4 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import {Route, Routes} from "react-router-dom";
 import Quotes from "./container/Quotes/Quotes";
@@ -8,6 +7,7 @@ import EditeQuote from "./container/EditeQuote/EditeQuote";
 import CategoryList from "./components/CategoryList/CategoryList";
 import {IApiText, IQuotesMut} from "./types";
 import axiosApi from "./AxiosApi";
+import './App.css';
 
 function App() {
 const [posts, setPosts] = useState<IQuotesMut[]>([]);
@@ -23,7 +23,7 @@ const [posts, setPosts] = useState<IQuotesMut[]>([]);
             })
             setPosts(post);
         } catch (e) {
-            console.log(e)
+
         }
     }, []);
 
@@ -31,30 +31,31 @@ const [posts, setPosts] = useState<IQuotesMut[]>([]);
         void fetchData();
     }, [fetchData]);
 
+
   return (
     <>
       <header>
         <NavBar />
       </header>
         <Routes>
-            <Route path='/' element={
-                (
+            <Route path={'/'} element={(
+                <div className='d-flex justify-content-around'>
+                    <CategoryList />
+                    <Quotes cleanQuote={fetchData} posts={posts}/>
+                </div>
+            )} />
+            <Route path='/quotes/:id' element={(
                     <div className='d-flex justify-content-around'>
                         <CategoryList />
-                        <Quotes cleanQuote={fetchData} posts={posts}/>
+                        <Quotes cleanQuote={fetchData} />
                     </div>
-                )
-            } />
-            <Route path='/add-quote' element={
-                (
+                )} />
+            <Route path='/add-quote' element={(
                     <AddQuote add={fetchData}/>
-                )
-            }/>
-            <Route path='/edit/:id' element={
-                (
+                )}/>
+            <Route path='/edit/:id' element={(
                     <EditeQuote edit={fetchData}/>
-                )
-            } />
+                )} />
         </Routes>
     </>
   );
