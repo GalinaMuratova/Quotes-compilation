@@ -4,6 +4,7 @@ import axiosApi from "../../AxiosApi";
 import { IQuotes } from "../../types";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
+import './AddQuote.css'
 
 interface Props {
     add:( ) => void;
@@ -68,7 +69,7 @@ const AddQuote:React.FC<Props> = ({add}) => {
                 value={text.text}
                 onChange={change}
                 name='text'
-                className='my-4 form-control'
+                className='my-4 form-control text-area'
                 placeholder='Quote text'
             />
             <button type='submit' className='btn btn-dark'>Add</button>
@@ -80,8 +81,8 @@ const AddQuote:React.FC<Props> = ({add}) => {
     }
 
     return (
-        <div className='text-center'>
-            <h2 className='my-3'>Add new quote</h2>
+        <div className='text-center add-block'>
+            <h2 className='my-3 add-title'>Add new quote</h2>
             {form}
         </div>
     );

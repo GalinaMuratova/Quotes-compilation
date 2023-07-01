@@ -1,0 +1,23 @@
+.add-block {
+    border-radius: 6px;
+    margin: 20px 80px;
+    background-color: white;
+    border: none;
+    box-shadow: -1px 0 6px -1px rgba(34, 60, 80, 0.2);
+    padding: 30px 15px;
+}
+
+.add-title {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/8173/8173351.png");
+    background-position: 650px center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 39px;
+    margin: 40px 0 30px;
+}
+
+.text-area {
+    resize: none;
+    width: auto;
+    height: 100px;
+}
