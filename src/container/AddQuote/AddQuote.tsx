@@ -10,13 +10,13 @@ interface Props {
 }
 
 const AddQuote:React.FC<Props> = ({add}) => {
-    const navigate = useNavigate();
     const [text, setText] = useState<IQuotes>({
         author: '',
         category: '',
         text: ''
     });
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
 
     const submit = async (e: FormEvent) => {
         e.preventDefault();
@@ -81,6 +81,7 @@ const AddQuote:React.FC<Props> = ({add}) => {
 
     return (
         <div className='text-center'>
+            <h2 className='my-3'>Add new quote</h2>
             {form}
         </div>
     );

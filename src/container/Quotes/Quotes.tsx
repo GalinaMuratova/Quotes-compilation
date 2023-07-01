@@ -1,5 +1,4 @@
 import React from 'react';
-import './Quotes.css';
 import {IQuotesMut} from "../../types";
 import Quote from "../../components/Quote/Quote";
 
@@ -15,7 +14,7 @@ const Quotes:React.FC<Props> = ({posts, cleanQuote}) => {
     return (
         <div className='p-4 w-50'>
             {reversedPosts.map((el) => (
-                <Quote author={el.author} category={el.category} text={el.text} id={el.id} clean={cleanQuote}/>
+                <Quote key={el.id} author={el.author} category={el.category} text={el.text} id={el.id} clean={cleanQuote}/>
             ))}
         </div>
     );

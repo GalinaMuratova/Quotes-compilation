@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { CATEGORIES } from '../../constants';
+import './CategoryList.css';
 
 const CategoryList = () => {
     return (

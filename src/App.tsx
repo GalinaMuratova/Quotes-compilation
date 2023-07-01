@@ -38,16 +38,22 @@ const [posts, setPosts] = useState<IQuotesMut[]>([]);
       </header>
         <Routes>
             <Route path='/' element={
-                <div className='d-flex justify-content-around'>
-                    <CategoryList />
-                    <Quotes cleanQuote={fetchData} posts={posts}/>
-                </div>
+                (
+                    <div className='d-flex justify-content-around'>
+                        <CategoryList />
+                        <Quotes cleanQuote={fetchData} posts={posts}/>
+                    </div>
+                )
             } />
             <Route path='/add-quote' element={
-                <AddQuote add={fetchData}/>
+                (
+                    <AddQuote add={fetchData}/>
+                )
             }/>
-            <Route path='/edite' element={
-                <EditeQuote />
+            <Route path='/edit/:id' element={
+                (
+                    <EditeQuote edit={fetchData}/>
+                )
             } />
         </Routes>
     </>

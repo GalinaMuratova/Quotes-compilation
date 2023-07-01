@@ -36,7 +36,7 @@ const Quote:React.FC<Props> = ({author, category,text, id, clean}) => {
                 <h4 className='py-4 ps-5 ms-3 '>{text}</h4>
             </div>
             <div className='card-footer d-flex p-3 justify-content-end'>
-                <Link to='/edite' className='btn btn-dark mx-3'>Edite</Link>
+                <Link to={'/edit/' + id} className='btn btn-dark mx-3'>Edit</Link>
                 <button type='button' className='btn btn-danger' onClick={deletePost}>Delete</button>
             </div>
         </div>

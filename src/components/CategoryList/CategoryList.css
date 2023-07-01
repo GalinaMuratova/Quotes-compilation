@@ -1,10 +1,11 @@
 .category-list {
-    margin: 0;
-    padding: 10px;
+    margin: 15px 0 0;
+    padding: 15px;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 6px;
 }
 
 .category-list .active {
@@ -12,11 +13,13 @@
 }
 
 .category-list a {
-    font-size: 18px;
+    background-color: aliceblue;
+    border: none;
+    font-size: 20px;
     line-height: 16px;
     color: #111111;
     text-decoration: none;
-    margin: 0 20px;
+    margin:0 0 10px;
     transition: all 0.7s;
 }
 
