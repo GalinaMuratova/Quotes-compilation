@@ -40,11 +40,11 @@ const [posts, setPosts] = useState<IQuotesMut[]>([]);
             <Route path='/' element={
                 <div className='d-flex justify-content-around'>
                     <CategoryList />
-                    <Quotes posts={posts}/>
+                    <Quotes cleanQuote={fetchData} posts={posts}/>
                 </div>
             } />
             <Route path='/add-quote' element={
-                <AddQuote />
+                <AddQuote add={fetchData}/>
             }/>
             <Route path='/edite' element={
                 <EditeQuote />

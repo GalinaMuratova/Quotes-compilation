@@ -5,7 +5,11 @@ import { IQuotes } from "../../types";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
 
-const AddQuote = () => {
+interface Props {
+    add:( ) => void;
+}
+
+const AddQuote:React.FC<Props> = ({add}) => {
     const navigate = useNavigate();
     const [text, setText] = useState<IQuotes>({
         author: '',
@@ -22,6 +26,7 @@ const AddQuote = () => {
         } finally {
             navigate('/');
             setLoading(false);
+            add();
         }
     };
 

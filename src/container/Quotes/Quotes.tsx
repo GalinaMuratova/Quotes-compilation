@@ -5,15 +5,17 @@ import Quote from "../../components/Quote/Quote";
 
 interface Props {
     posts: IQuotesMut[];
+    cleanQuote: () => void;
 }
 
-const Quotes:React.FC<Props> = ({posts}) => {
+const Quotes:React.FC<Props> = ({posts, cleanQuote}) => {
 
-    console.log(posts);
+    const reversedPosts = [...posts].reverse();
+
     return (
         <div className='p-4 w-50'>
-            {posts.map((el) => (
-                <Quote author={el.author} category={el.category} text={el.text} id={el.id}/>
+            {reversedPosts.map((el) => (
+                <Quote author={el.author} category={el.category} text={el.text} id={el.id} clean={cleanQuote}/>
             ))}
         </div>
     );
