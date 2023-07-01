@@ -1,0 +1,25 @@
+.category-list {
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.category-list .active {
+    color: #61dafb;
+}
+
+.category-list a {
+    font-size: 18px;
+    line-height: 16px;
+    color: #111111;
+    text-decoration: none;
+    margin: 0 20px;
+    transition: all 0.7s;
+}
+
+.category-list a:hover {
+    color: #61dafb;
+}
